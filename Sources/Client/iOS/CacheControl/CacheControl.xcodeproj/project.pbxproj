@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8FEDFBCBF5D04C1094A8340E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00ED2744D6EC4D4BA298E98D /* libPods.a */; };
 		F645B36C16E7387800798BE2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F645B36B16E7387800798BE2 /* UIKit.framework */; };
 		F645B36E16E7387800798BE2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F645B36D16E7387800798BE2 /* Foundation.framework */; };
 		F645B37016E7387800798BE2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F645B36F16E7387800798BE2 /* CoreGraphics.framework */; };
@@ -17,11 +18,7 @@
 		F645B38016E7387800798BE2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F645B37F16E7387800798BE2 /* Default@2x.png */; };
 		F645B38216E7387800798BE2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F645B38116E7387800798BE2 /* Default-568h@2x.png */; };
 		F645B38516E7387800798BE2 /* SKGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F645B38416E7387800798BE2 /* SKGuideViewController.m */; };
-		F645B38716E7387800798BE2 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = F645B38616E7387800798BE2 /* first.png */; };
-		F645B38916E7387800798BE2 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F645B38816E7387800798BE2 /* first@2x.png */; };
 		F645B38C16E7387800798BE2 /* SKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F645B38B16E7387800798BE2 /* SKWebViewController.m */; };
-		F645B38E16E7387800798BE2 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = F645B38D16E7387800798BE2 /* second.png */; };
-		F645B39016E7387800798BE2 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F645B38F16E7387800798BE2 /* second@2x.png */; };
 		F645B39316E7387800798BE2 /* SKGuideViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = F645B39116E7387800798BE2 /* SKGuideViewController_iPhone.xib */; };
 		F645B39616E7387800798BE2 /* SKGuideViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = F645B39416E7387800798BE2 /* SKGuideViewController_iPad.xib */; };
 		F645B39916E7387800798BE2 /* SKWebViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = F645B39716E7387800798BE2 /* SKWebViewController_iPhone.xib */; };
@@ -41,6 +38,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00ED2744D6EC4D4BA298E98D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		967CA1E9078D475AAAC74490 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		F645B36816E7387800798BE2 /* CacheControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CacheControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F645B36B16E7387800798BE2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F645B36D16E7387800798BE2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -56,12 +55,8 @@
 		F645B38116E7387800798BE2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		F645B38316E7387800798BE2 /* SKGuideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKGuideViewController.h; sourceTree = "<group>"; };
 		F645B38416E7387800798BE2 /* SKGuideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKGuideViewController.m; sourceTree = "<group>"; };
-		F645B38616E7387800798BE2 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
-		F645B38816E7387800798BE2 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
 		F645B38A16E7387800798BE2 /* SKWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKWebViewController.h; sourceTree = "<group>"; };
 		F645B38B16E7387800798BE2 /* SKWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKWebViewController.m; sourceTree = "<group>"; };
-		F645B38D16E7387800798BE2 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
-		F645B38F16E7387800798BE2 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		F645B39216E7387800798BE2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SKGuideViewController_iPhone.xib; sourceTree = "<group>"; };
 		F645B39516E7387800798BE2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SKGuideViewController_iPad.xib; sourceTree = "<group>"; };
 		F645B39816E7387800798BE2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SKWebViewController_iPhone.xib; sourceTree = "<group>"; };
@@ -91,6 +86,7 @@
 				F645B36C16E7387800798BE2 /* UIKit.framework in Frameworks */,
 				F645B36E16E7387800798BE2 /* Foundation.framework in Frameworks */,
 				F645B37016E7387800798BE2 /* CoreGraphics.framework in Frameworks */,
+				8FEDFBCBF5D04C1094A8340E /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +99,7 @@
 				F645B37116E7387800798BE2 /* CacheControl */,
 				F645B36A16E7387800798BE2 /* Frameworks */,
 				F645B36916E7387800798BE2 /* Products */,
+				967CA1E9078D475AAAC74490 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,6 +117,7 @@
 				F645B36B16E7387800798BE2 /* UIKit.framework */,
 				F645B36D16E7387800798BE2 /* Foundation.framework */,
 				F645B36F16E7387800798BE2 /* CoreGraphics.framework */,
+				00ED2744D6EC4D4BA298E98D /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -131,10 +129,6 @@
 				F645B3A216E7405A00798BE2 /* Resources */,
 				F645B37A16E7387800798BE2 /* SKAppDelegate.h */,
 				F645B37B16E7387800798BE2 /* SKAppDelegate.m */,
-				F645B38616E7387800798BE2 /* first.png */,
-				F645B38816E7387800798BE2 /* first@2x.png */,
-				F645B38D16E7387800798BE2 /* second.png */,
-				F645B38F16E7387800798BE2 /* second@2x.png */,
 				F645B37216E7387800798BE2 /* Supporting Files */,
 			);
 			path = CacheControl;
@@ -225,6 +219,7 @@
 				F645B36416E7387800798BE2 /* Sources */,
 				F645B36516E7387800798BE2 /* Frameworks */,
 				F645B36616E7387800798BE2 /* Resources */,
+				C209D2942BBD4B709A05817F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -271,10 +266,6 @@
 				F645B37E16E7387800798BE2 /* Default.png in Resources */,
 				F645B38016E7387800798BE2 /* Default@2x.png in Resources */,
 				F645B38216E7387800798BE2 /* Default-568h@2x.png in Resources */,
-				F645B38716E7387800798BE2 /* first.png in Resources */,
-				F645B38916E7387800798BE2 /* first@2x.png in Resources */,
-				F645B38E16E7387800798BE2 /* second.png in Resources */,
-				F645B39016E7387800798BE2 /* second@2x.png in Resources */,
 				F645B39316E7387800798BE2 /* SKGuideViewController_iPhone.xib in Resources */,
 				F645B39616E7387800798BE2 /* SKGuideViewController_iPad.xib in Resources */,
 				F645B39916E7387800798BE2 /* SKWebViewController_iPhone.xib in Resources */,
@@ -292,6 +283,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C209D2942BBD4B709A05817F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F645B36416E7387800798BE2 /* Sources */ = {
@@ -403,7 +411,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -428,7 +436,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -438,9 +446,15 @@
 		};
 		F645B3A016E7387800798BE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 967CA1E9078D475AAAC74490 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CacheControl/CacheControl-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"ENABLE_PONYDEBUGGER=1",
+				);
 				INFOPLIST_FILE = "CacheControl/CacheControl-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -450,6 +464,7 @@
 		};
 		F645B3A116E7387800798BE2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 967CA1E9078D475AAAC74490 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CacheControl/CacheControl-Prefix.pch";

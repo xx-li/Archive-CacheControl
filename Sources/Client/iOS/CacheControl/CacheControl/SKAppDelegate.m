@@ -14,10 +14,46 @@
 #import "SKListViewController.h"
 #import "SKAboutViewController.h"
 
+#if ENABLE_PONYDEBUGGER
+#import <PonyDebugger/PonyDebugger.h>
+#endif
+
 @implementation SKAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    // Don't use PonyDebugger unless we have ENABLE_PONYDEBUGGER enabled.
+    // When ENABLE_PONYDEBUGGER is enabled -lSocketRocket -lPonyDebugger
+    // should be added to "Other linker flags" settings.
+    // Release builds should not use PonyDebugger
+    
+#if ENABLE_PONYDEBUGGER
+    
+    PDDebugger *debugger = [PDDebugger defaultInstance];
+    
+    // Enable Network debugging, and automatically track network traffic that comes through any classes that NSURLConnectionDelegate methods.
+    [debugger enableNetworkTrafficDebugging];
+    [debugger forwardAllNetworkTraffic];
+    
+    // Enable Core Data debugging, and broadcast the main managed object context.
+    [debugger enableCoreDataDebugging];
+    //[debugger addManagedObjectContext:self.managedObjectContext withName:@"Twitter Test MOC"];
+    
+    // Enable View Hierarchy debugging. This will swizzle UIView methods to monitor changes in the hierarchy
+    // Choose a few UIView key paths to display as attributes of the dom nodes
+    [debugger enableViewHierarchyDebugging];
+    [debugger setDisplayedViewAttributeKeyPaths:@[@"frame", @"hidden", @"alpha", @"opaque"]];
+    
+    // Connect to a specific host
+    [debugger connectToURL:[NSURL URLWithString:@"ws://localhost:9000/device"]];
+    // Or auto connect via bonjour discovery
+    //[debugger autoConnect];
+    // Or to a specific ponyd bonjour service
+    //[debugger autoConnectToBonjourServiceNamed:@"MY PONY"];
+    
+#endif
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     UIViewController *guildViewController, *webViewController, *nativeViewController, *listViewController, *aboutViewController;
