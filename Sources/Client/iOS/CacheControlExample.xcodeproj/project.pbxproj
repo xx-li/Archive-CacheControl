@@ -66,6 +66,7 @@
 		D4C169F216FA1BA600C31D16 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		D4C169F416FA352B00C31D16 /* SKURLCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKURLCache.h; sourceTree = "<group>"; };
 		D4C169F516FA352B00C31D16 /* SKURLCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKURLCache.m; sourceTree = "<group>"; };
+		F60A532D16FC677500FC13C6 /* CacheControlAppConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheControlAppConstants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +134,7 @@
 				D4C169B916FA019500C31D16 /* InfoPlist.strings */,
 				D4C169BC16FA019500C31D16 /* main.m */,
 				D4C169BE16FA019500C31D16 /* CacheControlExample-Prefix.pch */,
+				F60A532D16FC677500FC13C6 /* CacheControlAppConstants.h */,
 				D4C169C216FA019500C31D16 /* Default.png */,
 				D4C169C416FA019500C31D16 /* Default@2x.png */,
 				D4C169C616FA019500C31D16 /* Default-568h@2x.png */,
@@ -415,6 +417,7 @@
 				D4C169E016FA019500C31D16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

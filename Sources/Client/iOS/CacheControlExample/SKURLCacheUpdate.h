@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+#define KFINISHEDUPDATECACHENOTIFICATION    @"sk_finished_update_cache_notification"
+
+
 @interface SKURLCacheUpdate : NSObject
 
 @property (nonatomic, retain) NSArray *updateList;

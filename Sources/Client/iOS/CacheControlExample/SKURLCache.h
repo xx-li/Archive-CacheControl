@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+//This property file is used to 
+#define SUPPORTCACHEDFILETYPEWITHDEFAULTFILE                                   @"SKSupportCachedFileTypeWithDefaultFile.plist"
+#define SKFORCEUSECACHEFILEINDENTIFICATION                                     @"#SKFORCEUSECACHEFILEINDENTIFICATION"
+
 @interface SKURLCache : NSURLCache
+
+
+- (BOOL)isForceUseCacheFile:(NSString *)url;
 
 @end

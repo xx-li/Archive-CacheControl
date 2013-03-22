@@ -8,6 +8,7 @@
 
 #import "SKSecondViewController.h"
 #import "UIImageView+Cache.h"
+#import "SKURLCacheUpdate.h"
 
 @interface SKSecondViewController ()
 
@@ -31,13 +32,14 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     //[self setImageViews];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setImageViews) name:@"update_cache_image" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setImageViews) name:KFINISHEDUPDATECACHENOTIFICATION object:nil];
 }
 
 - (void)setImageViews{
-    [self.imgView1 imageViewWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://192.168.1.106/cache/img1.png"]] placeHolder:[UIImage imageNamed:@"placeholder.png"]];
-    [self.imgView2 imageViewWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://192.168.1.106/cache/img2.png"]] placeHolder:[UIImage imageNamed:@"placeholder"]];
-    [self.imgView3 imageViewWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://192.168.1.106/cache/img3.png"]] placeHolder:[UIImage imageNamed:@"placeholder"]];
+    NSURL *baseURL = [NSURL URLWithString:kEndpoint];
+    [self.imgView1 imageViewWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"/cache/img1.png" relativeToURL:baseURL]] placeHolder:[UIImage imageNamed:@"placeholder.png"]];
+    [self.imgView2 imageViewWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"/cache/img2.png" relativeToURL:baseURL]] placeHolder:[UIImage imageNamed:@"placeholder.png"]];
+    [self.imgView3 imageViewWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"/cache/img3.png" relativeToURL:baseURL]] placeHolder:[UIImage imageNamed:@"placeholder.png"]];
 }
 
 - (void)didReceiveMemoryWarning

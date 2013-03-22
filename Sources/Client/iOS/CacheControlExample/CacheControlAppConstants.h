@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Shaoke Xu. All rights reserved.
 //
 
-#ifndef CacheControlExample_CacheControlAppConstants_h
-#define CacheControlExample_CacheControlAppConstants_h
-
-
-
-#endif
+//========================================
+//Settings
+//========================================
+//Server Endpoint Value
+#define kEndpoint                               @"http://192.168.67.51"
+#define kShareCachePath                         @"shareCache.db"

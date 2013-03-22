@@ -67,33 +67,23 @@
         
 
     </style>
-      
-    <script>
-        
-        
-    </script>
   </head>
   <body >
-  <!--
-      <div style="margin:10px 10px 0px 10px">
-      <div>
-          <input id="imageurl" type="input" placeholder="please input your image url" style="width:300px;">
-        <p>For example: http://192.168.67.134/test/logo.png</p>
-      </div>
-      <div>
-          <input id="intervaltime" type="input" placeholder="please input interval value" style="width:170px;">
-          <input id="start" type="button" value="Start" name="start" onclick="startInterval()">
-          <input id="stop" type="button" value="Stop" name="stop" onclick="stopInterval()">
-          <p>Default value is 10000. This mean every 10000ms check whether need to update images</p>
-       </div>
-      <input type="button" value="Insert Image" name="Insert Image" onclick="insertImage()">
-      <input type="button" value="Clear Image" name="Clear Image" onclick="clearImage()">
-	-->
-      <div id="imageDiv">
-      	<img id="img1" src="http://192.168.1.106/cache/img1.png" style="height:160px;">
-      	<img id="img2" src="http://192.168.1.106/cache/img2.png" style="height:160px;">
-      	<img id="img3" src="http://192.168.1.106/cache/img3.png" style="height:160px;">
-      </div>
+    <div id="imageDiv">
+	  	<img id="img1" style="height:160px;">
+      	<img id="img2" style="height:160px;">
+      	<img id="img3" style="height:160px;">
     </div>
+    <script type="text/javascript">
+    	function initImages(){
+    		$("img").each(function(index, elm){
+    			$(elm).attr("src", window.endpoint+"/cache/img"+(index+1)+".png");
+    		});
+    	}
+        
+        function test(){
+            alert("test");
+        }
+    </script>
   </body>
 </html>

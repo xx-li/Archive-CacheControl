@@ -7,13 +7,9 @@
 //
 
 #import "SKAppDelegate.h"
-
 #import "SKFirstViewController.h"
-
 #import "SKSecondViewController.h"
-
 #import "SKURLCacheUpdate.h"
-
 #import "SKURLCache.h"
 
 @implementation SKAppDelegate
@@ -22,10 +18,12 @@
 {
     
     // Set cache
-    SKURLCache *shareCache = [[SKURLCache alloc] initWithMemoryCapacity:20*1024*1024 diskCapacity:200*1024*1024 diskPath:@"cache.db"];
+    SKURLCache *shareCache = [[SKURLCache alloc] initWithMemoryCapacity:20*1024*1024 diskCapacity:200*1024*1024 diskPath:kShareCachePath];
     [SKURLCache setSharedURLCache:shareCache];
     
-    SKURLCacheUpdate *urlCacheUpdate = [[SKURLCacheUpdate alloc] initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://192.168.1.106/cache/index.php/api/dynamic/update_resources?timestemp=1221212"] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:60]];
+    NSLog(@"%@", [NSURL URLWithString:@"/cache/index.php/api/dynamic/update_resources?timestemp=1221212" relativeToURL:[NSURL URLWithString:kEndpoint]]);
+    
+    SKURLCacheUpdate *urlCacheUpdate = [[SKURLCacheUpdate alloc] initWithRequest:[NSURLRequest requestWithURL: [NSURL URLWithString:@"/cache/index.php/api/dynamic/update_resources?timestemp=1221212"relativeToURL:[NSURL URLWithString:kEndpoint]] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:60]];
     
     [urlCacheUpdate start];
     

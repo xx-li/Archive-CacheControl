@@ -77,7 +77,7 @@
 
 - (void)notification{
     NSLog(@"notification");
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"update_cache_image" object:self];
+    [[NSNotificationCenter defaultCenter] postNotificationName:KFINISHEDUPDATECACHENOTIFICATION object:self];
 }
 
 @end

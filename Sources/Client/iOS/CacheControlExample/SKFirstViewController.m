@@ -38,4 +38,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark
+#pragma mark UIWebViewDelegate
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
+    return YES;
+}
+
+- (void)webViewDidStartLoad:(UIWebView *)webView{
+    
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+    [self.webview stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"window.endpoint='%@'",kEndpoint]];
+    [self.webview stringByEvaluatingJavaScriptFromString:@"initImages()"];
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
+}
+
 @end
