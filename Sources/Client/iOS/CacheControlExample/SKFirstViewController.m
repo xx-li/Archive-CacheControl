@@ -7,6 +7,7 @@
 //
 
 #import "SKFirstViewController.h"
+#import "SKURLCacheUpdate.h"
 
 @interface SKFirstViewController ()
 
@@ -30,6 +31,12 @@
 	// Do any additional setup after loading the view, typically from a nib.
     NSURLRequest * request = [NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"]] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60];
     [self.webview loadRequest:request];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateImages) name:KFINISHEDUPDATECACHENOTIFICATION object:nil];
+}
+
+- (void)updateImages{
+    NSLog(@"webview updateImages");
+    [self.webview stringByEvaluatingJavaScriptFromString:@"updateImages();"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,6 +48,7 @@
 #pragma mark
 #pragma mark UIWebViewDelegate
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
+    NSLog(@"shouldStartLoadWithRequest, url = %@", [[request URL] description]);
     return YES;
 }
 

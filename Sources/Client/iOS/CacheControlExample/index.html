@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>Cache-Control</title>
-<!--   <script src="http://localhost:8080/target/target-script-min.js#anonymous"></script>       -->
+<!--  <script src="http://localhost:8080/target/target-script-min.js#anonymous"></script>        -->
     <script>
         /*! jQuery v1.9.1 | (c) 2005, 2012 jQuery Foundation, Inc. | jquery.org/license
          //@ sourceMappingURL=jquery.min.map
@@ -75,15 +75,28 @@
       	<img id="img3" style="height:160px;">
     </div>
     <script type="text/javascript">
+    	var indentification = "?SKFORCEUSECACHEFILEINDENTIFICATION";
     	function initImages(){
     		$("img").each(function(index, elm){
     			$(elm).attr("src", window.endpoint+"/cache/img"+(index+1)+".png");
-    		});
+                $(elm).addClass("SKForceUpdate");
+            });
     	}
         
-        function test(){
-            alert("test");
+        function updateImages(){
+            $(".SKForceUpdate").each(function(index, elm){
+                var url = $(elm).attr("src");
+                url = url.split(indentification)[0] ? url.split(indentification)[0]:null;
+                if(url){
+                	url = url+indentification+"?"+(new Date().getTime());
+                	$(elm).attr("src",url);
+                }
+            });
+//            $("#img1").attr("src", window.endpoint+"/cache/img1.png"+indentification+"?"+(new Date().getTime()));
+////            $("#img1").attr("src", window.endpoint+"/cache/img1.png");
+
         }
+        
     </script>
   </body>
 </html>
