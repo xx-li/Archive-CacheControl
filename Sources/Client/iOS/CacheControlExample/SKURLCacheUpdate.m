@@ -16,19 +16,25 @@
 
 - (void)updateCache;
 - (void)notification;
+- (void)successUpdateSpecificURL:(NSString *)url data:(NSData *)data;
+- (void)failUpdateSpecificURL:(NSString *)url error:(NSError *)error;
+- (void)finishUpdateCache:(NSMutableArray *)successList failList:(NSMutableArray *)failList;
 
 @end
 
 @implementation SKURLCacheUpdate
+@synthesize updateList;
+@synthesize request;
+@synthesize timeInterval;
 
-- (SKURLCacheUpdate *)initWithRequest:(NSURLRequest *)request{
-    self.request = request;
+- (SKURLCacheUpdate *)initWithRequest:(NSURLRequest *)urlRequest{
+    self.request = urlRequest;
     return self;
 }
 
 - (void)getUpdateList{
     SKURLConnection *connection = [[SKURLConnection alloc] initWithRequest:self.request success:^(NSURLConnection *connection, NSData *data){
-        self.updateList = [NSJSONSerialization JSONObjectWithData:data options:nil error:nil];
+        self.updateList = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
         NSLog(@"%@", self.updateList);
         [self updateCache];
     } error:^(NSURLConnection *connection, NSError *error){
@@ -38,46 +44,76 @@
     NSLog(@"%@", [connection description]);
 }
 
+// Start check update cache. each SKDEFAULTTIMEINTERVAL second will update cache
 - (void)start{
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:30.0 target:self selector:@selector(getUpdateList) userInfo:nil repeats:YES];
+    [self start:SKDEFAULTTIMEINTERVAL];
+}
+
+- (void)start:(NSTimeInterval)interval{
+    self.timeInterval = interval;
+    _timer = [NSTimer scheduledTimerWithTimeInterval:interval target:self selector:@selector(getUpdateList) userInfo:nil repeats:YES];
 }
 
 - (void)stop{
-    [self.timer invalidate];
+    [_timer invalidate];
 }
 
 - (void)updateCache{
     __block NSMutableArray *successList = [NSMutableArray array];
-    __block NSMutableArray *errorList = [NSMutableArray array];
+    __block NSMutableArray *failList = [NSMutableArray array];
+    SKURLConnection *connection;
     __block int updateNumber =0;
     if (self.updateList) {
         NSURLCache *urlCache = [NSURLCache sharedURLCache];
         for(int i =0; i<self.updateList.count; i++){
-            NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.updateList[i]]];
-            [urlCache removeCachedResponseForRequest:request];
-            SKURLConnection *connection = [[SKURLConnection alloc] initWithRequest:request success:^(NSURLConnection *connection, NSData *data){
+            NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:self.updateList[i]]];
+            [urlCache removeCachedResponseForRequest:urlRequest];
+            connection = [[SKURLConnection alloc] initWithRequest:urlRequest success:^(NSURLConnection *connection, NSData *data){
                 NSLog(@"success");
                 [successList addObject:self.updateList[i]];
+                [self successUpdateSpecificURL:self.updateList[i] data:data];
                 updateNumber++;
                 if (updateNumber == self.updateList.count) {
-                    [self notification];
+                    [self finishUpdateCache:successList failList:failList];
                 }
             } error:^(NSURLConnection *connection, NSError *error){
                 NSLog(@"error");
-                [errorList addObject:self.updateList[i]];
+                [failList addObject:self.updateList[i]];
                 updateNumber++;
+                [self failUpdateSpecificURL:self.updateList[i] error:error];
                 if (updateNumber == self.updateList.count) {
-                    [self notification];
+                    [self finishUpdateCache:successList failList:failList];
                 }
             }];
-            NSLog(@"%@", [connection description]);
         }
     }
+}
+
+- (void)finishUpdateCache:(NSMutableArray *)successList failList:(NSMutableArray *)failList{
+    [self notification];
 }
 
 - (void)notification{
     NSLog(@"notification");
     [[NSNotificationCenter defaultCenter] postNotificationName:KFINISHEDUPDATECACHENOTIFICATION object:self];
+}
+
+// If update a url success, will post a notification. Notification format:
+// Name: url
+// object: self
+// userInfo: {data: NSData}
+- (void)successUpdateSpecificURL:(NSString *)url data:(NSData *)data{
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:data, @"data", nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:url object:self userInfo:dic];
+}
+
+// If update a url fail, will post a notification. Notification format:
+// Name: url
+// object: self
+// userInfo: {error: NSError}
+- (void)failUpdateSpecificURL:(NSString *)url error:(NSError *)error{
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:error, @"error", nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:url object:self userInfo:dic];
 }
 
 @end

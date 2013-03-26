@@ -23,6 +23,7 @@
 @synthesize supportFileTypePath = _supportFileTypePath;
 @synthesize diskCachedPath = _diskCachedPath;
 
+// Initial a SKURLCache. Use default value
 - (id)initWithMemoryCapacity{
     if (self = [self initWithMemoryCapacity:SKDEFAULTCACHEMEMORYCAPACITY diskCapacity:SKDEFAULTCACHEDISKCAPACITY diskPath:SKDEFAULTCACHEFILEDISKPATH urlIndentification:SKFORCEUSECACHEFILEINDENTIFICATION supportFileTypePath:SKDEFAULTSUPPORTCACHEDFILETYPEWITHDEFAULTFILE]) {
     }
@@ -30,7 +31,7 @@
     return self;
 }
 
-
+// Initial a SKURLCache. Custom memory capacity, disk capacity and disk path. Use default indentification and support file
 - (id)initWithMemoryCapacity:(NSUInteger)memoryCapacity diskCapacity:(NSUInteger)diskCapacity diskPath:(NSString *)path{
     if (self = [self initWithMemoryCapacity:memoryCapacity diskCapacity:diskCapacity diskPath:path urlIndentification:SKFORCEUSECACHEFILEINDENTIFICATION supportFileTypePath:SKDEFAULTSUPPORTCACHEDFILETYPEWITHDEFAULTFILE]) {
     }
@@ -38,6 +39,7 @@
     return self;
 }
 
+// Initial a SKURLCache. custom all value
 - (id)initWithMemoryCapacity:(NSUInteger)memoryCapacity diskCapacity:(NSUInteger)diskCapacity diskPath:(NSString *)path urlIndentification:(NSString *)indentification supportFileTypePath:(NSString *)supportFileTypePath{
     
     if (self = [super initWithMemoryCapacity:memoryCapacity diskCapacity:diskCapacity diskPath:path]) {
@@ -52,6 +54,7 @@
     return self;
 }
 
+// Pass type name(maybe, png, jpg...), and it will return the default file for this type.
 - (NSString *)getDefaultFilePathByType:(NSString *)type{
     if (_supportFileTypeList) {
         return [_supportFileTypeList objectForKey:type];
@@ -60,7 +63,7 @@
     return nil;
 }
 
-// Whether need to do "Force use cache file"
+// Whether this url contains SKFORCEUSECACHEFILEINDENTIFICATION
 - (BOOL)isForceUseCacheFile:(NSString *)url{
     NSRange range = [url rangeOfString:SKFORCEUSECACHEFILEINDENTIFICATION];
     if (range.length == [SKFORCEUSECACHEFILEINDENTIFICATION length]) {    //Find
@@ -83,6 +86,9 @@
     return url;
 }
 
+
+#pragma mark
+#pragma mark NSURLCache
 - (NSCachedURLResponse *)cachedResponseForRequest:(NSURLRequest *)request{
     NSString *url = [[request URL] absoluteString];
     NSURLRequest *theRequest;
@@ -98,9 +104,9 @@
 
 - (void)storeCachedResponse:(NSCachedURLResponse *)cachedResponse forRequest:(NSURLRequest *)request{
     NSString *url = [[request URL] absoluteString];
-    if ([self isForceUseCacheFile:url]) {
+    if ([self isForceUseCacheFile:url]) {   //If this url has SKFORCEUSECACHEFILEINDENTIFICATION, don't need to cache this url
         return;
-    }else {
+    }else {                                 //Otherwise, need to cache this url
         [super storeCachedResponse:cachedResponse forRequest:request];
     }
 }

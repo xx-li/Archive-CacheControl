@@ -10,5 +10,5 @@
 //Settings
 //========================================
 //Server Endpoint Value
-#define kEndpoint                               @"http://192.168.1.103"
+#define kEndpoint                               @"http://192.168.1.104"
 #define kShareCachePath                         @"shareCache.db"

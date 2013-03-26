@@ -14,6 +14,7 @@
 
 - (void)imageViewWithCache:(NSString *)url placeHolder:(UIImage *)image;
 
+// Initial a UIImageView use reomote request
 - (void)imageViewWithRequest:(NSURLRequest *)request placeHolder:(UIImage *)image;
 
 @end

@@ -18,7 +18,7 @@
 @interface SKURLCache : NSURLCache
 
 @property (nonatomic, readonly, copy) NSString *urlIndetification;
-@property (nonatomic, readonly, copy) NSString *supportFileTypePath;
+@property (nonatomic, readonly, copy) NSString *supportFileTypePath;    //
 @property (nonatomic, readonly, copy) NSString *diskCachedPath;
 
 - (id)initWithMemoryCapacity;

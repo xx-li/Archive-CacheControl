@@ -9,17 +9,20 @@
 #import <Foundation/Foundation.h>
 
 #define KFINISHEDUPDATECACHENOTIFICATION    @"sk_finished_update_cache_notification"
+#define SKDEFAULTTIMEINTERVAL               30.0
 
-
-@interface SKURLCacheUpdate : NSObject
+@interface SKURLCacheUpdate : NSObject{
+    NSTimer *_timer;
+}
 
 @property (nonatomic, retain) NSArray *updateList;
 @property (nonatomic, retain) NSURLRequest *request;
-@property (nonatomic, retain) NSTimer *timer;
+@property (nonatomic) NSTimeInterval timeInterval;
 
 
-- (SKURLCacheUpdate *)initWithRequest:(NSURLRequest *)request;
+- (SKURLCacheUpdate *)initWithRequest:(NSURLRequest *)urlRequest;
 - (void)start;
+- (void)start:(NSTimeInterval)interval;
 - (void)stop;
 
 @end
