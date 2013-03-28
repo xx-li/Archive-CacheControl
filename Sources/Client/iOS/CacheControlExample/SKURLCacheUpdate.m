@@ -95,7 +95,7 @@
 
 - (void)notification{
     NSLog(@"notification");
-    [[NSNotificationCenter defaultCenter] postNotificationName:KFINISHEDUPDATECACHENOTIFICATION object:self];
+    [[NSNotificationCenter defaultCenter] postNotificationName:SKFINISHEDUPDATECACHENOTIFICATION object:self];
 }
 
 // If update a url success, will post a notification. Notification format:

@@ -32,7 +32,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     [self setImageViews];
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setImageViews) name:KFINISHEDUPDATECACHENOTIFICATION object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setImageViews) name:SKFINISHEDUPDATECACHENOTIFICATION object:nil];
 }
 
 - (void)setImageViews{

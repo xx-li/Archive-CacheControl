@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define KFINISHEDUPDATECACHENOTIFICATION    @"sk_finished_update_cache_notification"
+#define SKFINISHEDUPDATECACHENOTIFICATION    @"sk_finished_update_cache_notification"
 #define SKDEFAULTTIMEINTERVAL               30.0
 
 @interface SKURLCacheUpdate : NSObject{

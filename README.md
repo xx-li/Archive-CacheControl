@@ -11,7 +11,7 @@ Cache Control is based on NSURLCache, support both native and web view cache., b
 
 ## Overview
 <p align="center">
-  <img src="Class Relationship.png" alt="Cache Control Architecture Diagram"/>
+  <img src="./Docs/images/Class Relationship.png" alt="Cache Control Architecture Diagram"/>
 </p>
 Cache Control is architected to be as modular as possible, I hope it is simple to use and extend.
 <table>
@@ -20,18 +20,18 @@ Cache Control is architected to be as modular as possible, I hope it is simple t
 	</tr>
 	<tr>
 		<td> <strong>SKURLCache</strong></td>
-		<td>SKURLCache is extended from NSURLCache. It provide in-memory and in-disk cache, also it will judge whether need to cache  response. We didn't cache response that url contains <strong>KFINISHEDUPDATECACHENOTIFICATION</strong> </td>
+		<td>SKURLCache is extended from <a href="https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSURLCache_Class/Reference/Reference.html" title="NSURLCache">NSURLCache</a>. It provide in-memory and in-disk cache, also it will judge whether need to cache  response. We didn't cache response that url contains <span style="color:rgb(155, 77, 28);font-weight:bold;">SKFORCEUSECACHEFILEINDENTIFICATION</span> </td>
 	</tr>
 	<tr>
 		<td> <strong>SKURLCacheUpdate</strong> </td>
-		<td>SKURLCacheUpdate is responsible for update cache. You can use it to get update list from server then update cache, you also can start a NSTimer, let it update cache interval. If it updates a url successful, it will post a notification. When it update whole list, it will post a <strong>KFINISHEDUPDATECACHENOTIFICATION</strong> notification</td>
+		<td>SKURLCacheUpdate is responsible for update cache. You can use it to get update list from server then update cache, you also can start a NSTimer, let it update cache interval. If it updates a url successful, it will post a notification. When it update whole list, it will post a <span style="color:rgb(155, 77, 28);font-weight:bold;">SKFINISHEDUPDATECACHENOTIFICATION</span> notification</td>
 	</tr>
 	<tr>
 		<th colspan='2' >HTTP Request</th>
 	</tr>
 	<tr>
 		<td> <strong>SKURLConnection</strong> </td>
-		<td> <strong>SKURLConnection</strong> that implements the NSURLConnection delegate method. You can use it to get data from server.</td>
+		<td> <strong>SKURLConnection</strong> that implements the <a title="NSURLConnection" href="https://developer.apple.com/library/ios/#documentation/Cocoa/Conceptual/URLLoadingSystem/Tasks/UsingNSURLConnection.html#//apple_ref/doc/uid/20001836-BAJEAIEE">NSURLConnection</a> delegate method. You can use it to get data from server.</td>
 	</tr>
 	<tr>
 		<th colspan='2' >Images</th>
@@ -48,6 +48,34 @@ Cache Control is architected to be as modular as possible, I hope it is simple t
 		<td> Provide a javascript file for implement cache control for the resource in UIWebView. </td>
 	</tr>
 </table>
+
+## Work Flow
+<p align="center">
+  <img src="./Docs/images/Work Flow.png" alt="Cache Control Architecture Diagram"/>
+</p>
+Let me explain what is the work flow when you use **Cache Control**.
+
+* **Step 1**: Use SKURLConnection to get data. (Actually, UIWebview will use NSURLConnection to get data, for easy, we both said it use SKURLConnection)
+
+* **Step 2**: Before it really send request to server, it will check whether it has cache (__Assume you use default cache policy__)
+> <p style="background-color:yellow;"><span style="color: red; font-weight:bold;">Note:</span> This behaviour is controlled by NSURLCache Cache Policy. You can get more information about Cache Policy from <a title="Understanding Cache Access" href="https://developer.apple.com/library/ios/#documentation/Cocoa/Conceptual/URLLoadingSystem/Concepts/CachePolicies.html#//apple_ref/doc/uid/20001843-BAJEAIEE">Understanding Cache Access</a></p>
+
+* **Step 3**: If it has cached before, it will return the value cached in SKURLCache
+
+* **Step 4**: Otherwise, it will send request to server to get data
+
+* **Step 5**: Server return data
+
+* **Step 6**: The data return by server will also cached in SKURLCache
+
+* **Step 7**: SKURLCacheUpdate get update list from server
+
+* **Step 8**: Based on the list get from server, start update cache.
+
+* **Step 9**, **Step 10**: When update url success or fail, post a notification
+
+* When UIImageView and UIWebView receive this notification, will start update.
+
 
 ## Folder Structure
 ```
@@ -69,6 +97,7 @@ CacheControl
 1. [ XAMPP ](http://www.apachefriends.org/en/xampp.html): XAMPP is an easy to install Apache distribution containing MySQL, PHP and Perl
 2. [ CodeIgniter Rest Server ](https://github.com/philsturgeon/codeigniter-restserver): A fully RESTful server implementation for CodeIgniter using one library, one config file and one controller
 3. Following articles are helpful to understand Cache-Control
+
     > * [ http://www.mnot.net/cache_docs/ ](http://www.mnot.net/cache_docs/)
     > * [ http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
     > * [ http://www.websiteoptimization.com/speed/tweak/cache/ ](http://www.websiteoptimization.com/speed/tweak/cache/)
@@ -79,7 +108,7 @@ This application is developed by Shaoke Xu. You can use following way to contact
 
 **Website**: <http://shaoke.me>
 
-**Email**: [ blithexu@gmail.com ](blithexu@gmail.com)
+**Email**: [ shaokexu@gmail.com ](shaokexu@gmail.com)
 
 ## License
 **Cache Control** is available under the MIT license. See the LICENSE file for more info.

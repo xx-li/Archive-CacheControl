@@ -31,7 +31,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     NSURLRequest * request = [NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"]] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60];
     [self.webview loadRequest:request];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateImages) name:KFINISHEDUPDATECACHENOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateImages) name:SKFINISHEDUPDATECACHENOTIFICATION object:nil];
 }
 
 - (void)updateImages{
