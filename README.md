@@ -19,32 +19,32 @@ Cache Control is architected to be as modular as possible, I hope it is simple t
 		<th colspan='2' >Core</th>
 	</tr>
 	<tr>
-		<td> __SKURLCache__ </td>
-		<td>SKURLCache is extended from NSURLCache. It provide in-memory and in-disk cache, also it will judge whether need to cache  response. We didn't cache response that url contains __KFINISHEDUPDATECACHENOTIFICATION__ </td>
+		<td> <strong>SKURLCache</strong></td>
+		<td>SKURLCache is extended from NSURLCache. It provide in-memory and in-disk cache, also it will judge whether need to cache  response. We didn't cache response that url contains <strong>KFINISHEDUPDATECACHENOTIFICATION</strong> </td>
 	</tr>
 	<tr>
-		<td> __SKURLCacheUpdate__ </td>
-		<td>SKURLCacheUpdate is responsible for update cache. You can use it to get update list from server then update cache, you also can start a NSTimer, let it update cache interval. If it updates a url successful, it will post a notification. When it update whole list, it will post a __KFINISHEDUPDATECACHENOTIFICATION__ notification</td>
+		<td> <strong>SKURLCacheUpdate</strong> </td>
+		<td>SKURLCacheUpdate is responsible for update cache. You can use it to get update list from server then update cache, you also can start a NSTimer, let it update cache interval. If it updates a url successful, it will post a notification. When it update whole list, it will post a <strong>KFINISHEDUPDATECACHENOTIFICATION</strong> notification</td>
 	</tr>
 	<tr>
 		<th colspan='2' >HTTP Request</th>
 	</tr>
 	<tr>
-		<td> __SKURLConnection__ </td>
-		<td> __SKURLConnection__ that implements the NSURLConnection delegate method. You can use it to get data from server.</td>
+		<td> <strong>SKURLConnection</strong> </td>
+		<td> <strong>SKURLConnection</strong> that implements the NSURLConnection delegate method. You can use it to get data from server.</td>
 	</tr>
 	<tr>
 		<th colspan='2' >Images</th>
 	</tr>
 	<tr>
-		<td> __UIImageView+Cache__ </td>
-		<td> __UIImageView+Cache__ extend UIImageView, add methods for loading image from server or from local cache. </td>
+		<td> <strong>UIImageView+Cache</strong> </td>
+		<td> <strong>UIImageView+Cache</strong> extend UIImageView, add methods for loading image from server or from local cache. </td>
 	</tr>
 	<tr>
 		<th colspan='2' >UIWebView</th>
 	</tr>
 	<tr>
-		<td> __UIWebView__ </td>
+		<td> <strong>UIWebView</strong> </td>
 		<td> Provide a javascript file for implement cache control for the resource in UIWebView. </td>
 	</tr>
 </table>
