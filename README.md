@@ -94,6 +94,8 @@ CacheControl
 3. Can understand HTML, JS, PHP and Obj-C
 
 ## Resources
+Following articles I read it when I think about cache
+
 1. [ XAMPP ](http://www.apachefriends.org/en/xampp.html): XAMPP is an easy to install Apache distribution containing MySQL, PHP and Perl
 2. [ CodeIgniter Rest Server ](https://github.com/philsturgeon/codeigniter-restserver): A fully RESTful server implementation for CodeIgniter using one library, one config file and one controller
 3. Following articles are helpful to understand Cache-Control
@@ -102,6 +104,11 @@ CacheControl
     > * [ http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
     > * [ http://www.websiteoptimization.com/speed/tweak/cache/ ](http://www.websiteoptimization.com/speed/tweak/cache/)
     > * [ https://devcenter.heroku.com/articles/ios-network-caching-http-headers ](https://devcenter.heroku.com/articles/ios-network-caching-http-headers)
+
+Following third part libraries I just used in develop time, the purpose is for debug, generate doc…
+
+  1. [PonyDebugger](https://github.com/square/PonyDebugger): Remote debugging toolset, to see request detail
+  2. [Appledoc](https://github.com/tomaz/appledoc): Generate Apple-like document
 
 ## Contact
 This application is developed by Shaoke Xu. You can use following way to contact me:

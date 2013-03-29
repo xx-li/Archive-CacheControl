@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		50914825AE0240239CD8FA0F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E35D43F511FE47308C91EF3C /* libPods.a */; };
-		D42BD97A16FD5D2200A193D0 /* SKSupportCachedFileTypeWithDefaultFile.plist in Resources */ = {isa = PBXBuildFile; fileRef = D42BD97916FD5D2200A193D0 /* SKSupportCachedFileTypeWithDefaultFile.plist */; };
 		D4C169B116FA019500C31D16 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C169B016FA019500C31D16 /* UIKit.framework */; };
 		D4C169B316FA019500C31D16 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C169B216FA019500C31D16 /* Foundation.framework */; };
 		D4C169B516FA019500C31D16 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C169B416FA019500C31D16 /* CoreGraphics.framework */; };
@@ -27,16 +26,16 @@
 		D4C169D816FA019500C31D16 /* SKFirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4C169D616FA019500C31D16 /* SKFirstViewController.xib */; };
 		D4C169DB16FA019500C31D16 /* SKSecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4C169D916FA019500C31D16 /* SKSecondViewController.xib */; };
 		D4C169E616FA036B00C31D16 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = D4C169E516FA036B00C31D16 /* index.html */; };
-		D4C169EA16FA06E600C31D16 /* UIImageView+Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C169E916FA06E600C31D16 /* UIImageView+Cache.m */; };
-		D4C169ED16FA0ACB00C31D16 /* SKURLCacheUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C169EC16FA0ACB00C31D16 /* SKURLCacheUpdate.m */; };
-		D4C169F016FA0CBA00C31D16 /* SKURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C169EF16FA0CBA00C31D16 /* SKURLConnection.m */; };
 		D4C169F316FA1BA600C31D16 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = D4C169F216FA1BA600C31D16 /* placeholder.png */; };
-		D4C169F616FA352B00C31D16 /* SKURLCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C169F516FA352B00C31D16 /* SKURLCache.m */; };
+		F60E00BC1705397A00BD797C /* SKSupportCachedFileTypeWithDefaultFile.plist in Resources */ = {isa = PBXBuildFile; fileRef = F60E00B31705397A00BD797C /* SKSupportCachedFileTypeWithDefaultFile.plist */; };
+		F60E00BD1705397A00BD797C /* SKURLCache.m in Sources */ = {isa = PBXBuildFile; fileRef = F60E00B51705397A00BD797C /* SKURLCache.m */; };
+		F60E00BE1705397A00BD797C /* SKURLCacheUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = F60E00B71705397A00BD797C /* SKURLCacheUpdate.m */; };
+		F60E00BF1705397A00BD797C /* SKURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = F60E00B91705397A00BD797C /* SKURLConnection.m */; };
+		F60E00C01705397A00BD797C /* UIImageView+Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = F60E00BB1705397A00BD797C /* UIImageView+Cache.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		722CA114456C4A4D8E3F826E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		D42BD97916FD5D2200A193D0 /* SKSupportCachedFileTypeWithDefaultFile.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SKSupportCachedFileTypeWithDefaultFile.plist; sourceTree = "<group>"; };
 		D4C169AD16FA019500C31D16 /* CacheControlExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CacheControlExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4C169B016FA019500C31D16 /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D4C169B216FA019500C31D16 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -61,17 +60,18 @@
 		D4C169D716FA019500C31D16 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SKFirstViewController.xib; sourceTree = "<group>"; };
 		D4C169DA16FA019500C31D16 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SKSecondViewController.xib; sourceTree = "<group>"; };
 		D4C169E516FA036B00C31D16 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		D4C169E816FA06E600C31D16 /* UIImageView+Cache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Cache.h"; sourceTree = "<group>"; };
-		D4C169E916FA06E600C31D16 /* UIImageView+Cache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Cache.m"; sourceTree = "<group>"; };
-		D4C169EB16FA0ACB00C31D16 /* SKURLCacheUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKURLCacheUpdate.h; sourceTree = "<group>"; };
-		D4C169EC16FA0ACB00C31D16 /* SKURLCacheUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKURLCacheUpdate.m; sourceTree = "<group>"; };
-		D4C169EE16FA0CBA00C31D16 /* SKURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKURLConnection.h; sourceTree = "<group>"; };
-		D4C169EF16FA0CBA00C31D16 /* SKURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKURLConnection.m; sourceTree = "<group>"; };
 		D4C169F216FA1BA600C31D16 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
-		D4C169F416FA352B00C31D16 /* SKURLCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKURLCache.h; sourceTree = "<group>"; };
-		D4C169F516FA352B00C31D16 /* SKURLCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKURLCache.m; sourceTree = "<group>"; };
 		E35D43F511FE47308C91EF3C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F60A532D16FC677500FC13C6 /* CacheControlAppConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheControlAppConstants.h; sourceTree = "<group>"; };
+		F60E00B31705397A00BD797C /* SKSupportCachedFileTypeWithDefaultFile.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = SKSupportCachedFileTypeWithDefaultFile.plist; path = SKURLCache/SKSupportCachedFileTypeWithDefaultFile.plist; sourceTree = "<group>"; };
+		F60E00B41705397A00BD797C /* SKURLCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKURLCache.h; path = SKURLCache/SKURLCache.h; sourceTree = "<group>"; };
+		F60E00B51705397A00BD797C /* SKURLCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKURLCache.m; path = SKURLCache/SKURLCache.m; sourceTree = "<group>"; };
+		F60E00B61705397A00BD797C /* SKURLCacheUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKURLCacheUpdate.h; path = SKURLCache/SKURLCacheUpdate.h; sourceTree = "<group>"; };
+		F60E00B71705397A00BD797C /* SKURLCacheUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKURLCacheUpdate.m; path = SKURLCache/SKURLCacheUpdate.m; sourceTree = "<group>"; };
+		F60E00B81705397A00BD797C /* SKURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKURLConnection.h; path = SKURLCache/SKURLConnection.h; sourceTree = "<group>"; };
+		F60E00B91705397A00BD797C /* SKURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKURLConnection.m; path = SKURLCache/SKURLConnection.m; sourceTree = "<group>"; };
+		F60E00BA1705397A00BD797C /* UIImageView+Cache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+Cache.h"; path = "SKURLCache/UIImageView+Cache.h"; sourceTree = "<group>"; };
+		F60E00BB1705397A00BD797C /* UIImageView+Cache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+Cache.m"; path = "SKURLCache/UIImageView+Cache.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,15 +191,15 @@
 		D4C169E716FA05A600C31D16 /* SKURLCache */ = {
 			isa = PBXGroup;
 			children = (
-				D4C169F416FA352B00C31D16 /* SKURLCache.h */,
-				D4C169F516FA352B00C31D16 /* SKURLCache.m */,
-				D4C169E816FA06E600C31D16 /* UIImageView+Cache.h */,
-				D4C169E916FA06E600C31D16 /* UIImageView+Cache.m */,
-				D4C169EB16FA0ACB00C31D16 /* SKURLCacheUpdate.h */,
-				D4C169EC16FA0ACB00C31D16 /* SKURLCacheUpdate.m */,
-				D4C169EE16FA0CBA00C31D16 /* SKURLConnection.h */,
-				D4C169EF16FA0CBA00C31D16 /* SKURLConnection.m */,
-				D42BD97916FD5D2200A193D0 /* SKSupportCachedFileTypeWithDefaultFile.plist */,
+				F60E00B31705397A00BD797C /* SKSupportCachedFileTypeWithDefaultFile.plist */,
+				F60E00B41705397A00BD797C /* SKURLCache.h */,
+				F60E00B51705397A00BD797C /* SKURLCache.m */,
+				F60E00B61705397A00BD797C /* SKURLCacheUpdate.h */,
+				F60E00B71705397A00BD797C /* SKURLCacheUpdate.m */,
+				F60E00B81705397A00BD797C /* SKURLConnection.h */,
+				F60E00B91705397A00BD797C /* SKURLConnection.m */,
+				F60E00BA1705397A00BD797C /* UIImageView+Cache.h */,
+				F60E00BB1705397A00BD797C /* UIImageView+Cache.m */,
 			);
 			name = SKURLCache;
 			sourceTree = "<group>";
@@ -277,7 +277,7 @@
 				D4C169DB16FA019500C31D16 /* SKSecondViewController.xib in Resources */,
 				D4C169E616FA036B00C31D16 /* index.html in Resources */,
 				D4C169F316FA1BA600C31D16 /* placeholder.png in Resources */,
-				D42BD97A16FD5D2200A193D0 /* SKSupportCachedFileTypeWithDefaultFile.plist in Resources */,
+				F60E00BC1705397A00BD797C /* SKSupportCachedFileTypeWithDefaultFile.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,10 +309,10 @@
 				D4C169C116FA019500C31D16 /* SKAppDelegate.m in Sources */,
 				D4C169CA16FA019500C31D16 /* SKFirstViewController.m in Sources */,
 				D4C169D116FA019500C31D16 /* SKSecondViewController.m in Sources */,
-				D4C169EA16FA06E600C31D16 /* UIImageView+Cache.m in Sources */,
-				D4C169ED16FA0ACB00C31D16 /* SKURLCacheUpdate.m in Sources */,
-				D4C169F016FA0CBA00C31D16 /* SKURLConnection.m in Sources */,
-				D4C169F616FA352B00C31D16 /* SKURLCache.m in Sources */,
+				F60E00BD1705397A00BD797C /* SKURLCache.m in Sources */,
+				F60E00BE1705397A00BD797C /* SKURLCacheUpdate.m in Sources */,
+				F60E00BF1705397A00BD797C /* SKURLConnection.m in Sources */,
+				F60E00C01705397A00BD797C /* UIImageView+Cache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
